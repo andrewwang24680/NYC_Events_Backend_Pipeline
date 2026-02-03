@@ -1,0 +1,13 @@
+end_lat	Total=40090877, missing=0(0.00%), invalid=0(0.00%), outOfRange=0(0.00%)
+end_lng	Total=40090877, missing=0(0.00%), invalid=0(0.00%), outOfRange=0(0.00%)
+end_station_id	Total=40090877, missing=0(0.00%), invalid_format=0(0.00%)
+end_station_name	Total=40090877, missing=0(0.00%)
+ended_at	Total=40090877, missing=0(0.00%), invalid=0(0.00%), miss_precision=0(0.00%), out_of_range=0(0.00%),  min_time=2025-01-01 00:00:04.075, max_time=2025-10-31 23:59:59.794, range=[2024-01-01 00:00:00.000 to 2025-11-01 00:00:00.000]
+member_casual	Total=40090877, missing=0(0.00%), unique=2, values={casual=7208456, member=32882421}
+ride_id	Total=40090877, missing=0(0.00%)
+rideable_type	Total=40090877, missing=0(0.00%), unique=2, values={electric_bike=28120395, classic_bike=11970482}
+start_lat	Total=40090877, missing=0(0.00%), invalid=0(0.00%), outOfRange=0(0.00%)
+start_lng	Total=40090877, missing=0(0.00%), invalid=0(0.00%), outOfRange=0(0.00%)
+start_station_id	Total=40090877, missing=0(0.00%), invalid_format=0(0.00%)
+start_station_name	Total=40090877, missing=0(0.00%)
+started_at	Total=40090877, missing=0(0.00%), invalid=0(0.00%), miss_precision=0(0.00%), out_of_range=0(0.00%),  min_time=2024-12-31 12:54:23.643, max_time=2025-10-31 23:58:16.325, range=[2024-01-01 00:00:00.000 to 2025-11-01 00:00:00.000]

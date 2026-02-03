@@ -1,0 +1,13 @@
+end_lat	Total=44303209, missing=122304(0.28%), invalid=0(0.00%), outOfRange=179(0.00%)
+end_lng	Total=44303209, missing=122304(0.28%), invalid=0(0.00%), outOfRange=179(0.00%)
+end_station_id	Total=44303209, missing=122573(0.28%), invalid_format=8351(0.02%)
+end_station_name	Total=44303209, missing=114545(0.26%)
+ended_at	Total=44303209, missing=0(0.00%), invalid=0(0.00%), miss_precision=0(0.00%), out_of_range=0(0.00%),  min_time=2024-01-01 00:00:08.272, max_time=2024-12-31 23:59:48.482, range=[2024-01-01 00:00:00.000 to 2025-11-01 00:00:00.000]
+member_casual	Total=44303209, missing=0(0.00%), unique=2, values={casual=8556931, member=35746278}
+ride_id	Total=44303209, missing=0(0.00%)
+rideable_type	Total=44303209, missing=0(0.00%), unique=2, values={classic_bike=15007957, electric_bike=29295252}
+start_lat	Total=44303209, missing=29835(0.07%), invalid=0(0.00%), outOfRange=0(0.00%)
+start_lng	Total=44303209, missing=29835(0.07%), invalid=0(0.00%), outOfRange=0(0.00%)
+start_station_id	Total=44303209, missing=29835(0.07%), invalid_format=3703(0.01%)
+start_station_name	Total=44303209, missing=29835(0.07%)
+started_at	Total=44303209, missing=0(0.00%), invalid=0(0.00%), miss_precision=0(0.00%), out_of_range=410(0.00%),  min_time=2023-12-31 02:36:55.648, max_time=2024-12-31 23:57:46.390, range=[2024-01-01 00:00:00.000 to 2025-11-01 00:00:00.000]
