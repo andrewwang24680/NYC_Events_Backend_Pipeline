@@ -1,0 +1,58 @@
+
+CREATE EXTERNAL TABLE IF NOT EXISTS events_cleaned_csv (
+  event_id           STRING,
+  event_name         STRING,
+  start_time         STRING,
+  end_time           STRING,
+  event_type         STRING,
+  start_location_id  INT,
+  end_location_id    INT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+LOCATION '/user/yw4417_nyu_edu/data/output/cleaned/';
+
+
+CREATE EXTERNAL TABLE IF NOT EXISTS events_cleaned_orc_partitioned (
+  event_id           STRING,
+  event_name         STRING,
+  start_time         TIMESTAMP,
+  end_time           TIMESTAMP,
+  event_type         STRING,
+  start_location_id  INT,
+  end_location_id    INT
+)
+PARTITIONED BY (year INT, month INT)
+STORED AS ORC
+LOCATION '/user/yw4417_nyu_edu/data/output/cleaned_orc_partitioned/';
+
+
+SET hive.exec.dynamic.partition = true;
+SET hive.exec.dynamic.partition.mode = nonstrict;
+
+
+INSERT OVERWRITE TABLE events_cleaned_orc_partitioned
+PARTITION (year, month)
+SELECT
+  event_id,
+  event_name,
+  from_unixtime(unix_timestamp(start_time, 'yyyy-MM-dd HH:mm:ss')) AS start_time,
+  from_unixtime(unix_timestamp(end_time, 'yyyy-MM-dd HH:mm:ss')) AS end_time,
+  event_type,
+  start_location_id,
+  end_location_id,
+  year(from_unixtime(unix_timestamp(start_time, 'yyyy-MM-dd HH:mm:ss'))) AS year,
+  month(from_unixtime(unix_timestamp(start_time, 'yyyy-MM-dd HH:mm:ss'))) AS month
+FROM events_cleaned_csv;
+
+
+MSCK REPAIR TABLE events_cleaned_orc_partitioned;
+
+
+SELECT COUNT(*) FROM events_cleaned_orc_partitioned;
+SHOW PARTITIONS events_cleaned_orc_partitioned;
+SELECT * FROM events_cleaned_orc_partitioned LIMIT 10;
+
+
+
